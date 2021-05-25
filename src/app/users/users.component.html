@@ -1,0 +1,54 @@
+<div class="content-wrapper">
+  <div class="card">
+    <div class="card-header">
+      User form
+    </div>
+    <div class="card-body">
+      <form [formGroup]="userForm">
+        <label>Username</label>
+        <input id="username" formControlName="username" type="text" class="form-control"
+               placeholder="Add your username">
+        <div *ngIf="getControl.username.invalid && (getControl.username.dirty || getControl.username.touched)"
+             class="alert alert-danger">
+          <div *If="getControl.username.errors?.required">
+            Username cannot be empty
+          </div>
+          <div *ngIf="getControl.username.errors?.minlength">
+            Insufficient characters
+          </div>
+          <div *ngIf="getControl.username.errors?.maxlength">
+            The username is too long
+          </div>
+        </div>
+        <br>
+        <label>Email</label>
+        <input id="email" formControlName="email" type="text" class="form-control" placeholder="Add your email">
+        <div *ngIf="getControl.email.invalid && (getControl.email.dirty || getControl.email.touched)"
+             class="alert alert-danger">
+          <div *If="getControl.email.errors?.required">
+            Email cannot be empty
+          </div>
+          <div *ngIf="getControl.email.errors?.minlength">
+            Insufficient characters
+          </div>
+          <br>
+        </div>
+        <br>
+        <label>School</label>
+        <input id="school" formControlName="school" type="text" class="form-control" placeholder="Add the school">
+        <div *ngIf="getControl.school.invalid && (getControl.school.dirty || getControl.school.touched)"
+             class="alert alert-danger">
+          <div *If="getControl.school.errors?.required">
+            Name cannot be empty
+          </div>
+        </div>
+        <br>
+        <label>Cellphone</label>
+        <input id="cellphone" formControlName="cellphone" type="number" class="form-control"
+               placeholder="Add cellphone">
+      </form>
+    </div>
+    <div class="card-footer">
+    </div>
+  </div>
+</div>
